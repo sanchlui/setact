@@ -424,11 +424,14 @@ def view_stats():
     # EXAMPLE: favorites <= my_playlist
 
     # YOUR CODE HERE:
+    favorites.issubset(my_playlist)
 
     # TODO: Calculate percentage of playlist that are favorites
     # Handle the case where playlist is empty!
 
     # YOUR CODE HERE:
+    percent = len(favorites) / len(my_playlist)
+    print(f"Percent of favorites: {percent}%")
 
     # Compare with friends
     print(f"\n👥 Compared to Friends:")
@@ -437,7 +440,7 @@ def view_stats():
         # Use intersection
 
         # YOUR CODE HERE:
-        common = set()  # Replace with intersection!
+        common = len(friend) / len(songs)
         print(f"   {friend}: {len(common)} songs in common")
 
 
@@ -479,8 +482,11 @@ def check_relationships():
     # HINT: Use < for proper subset, > for proper superset
 
     # YOUR CODE HERE:
-    # Replace the pass with your comparison logic!
-    pass
+    my_playlist.issubset(friend_songs)
+    my_playlist.issuperset(friend_songs)
+    my_playlist.isdisjoint(friend_songs)
+
+
 
 
 # ============================================
